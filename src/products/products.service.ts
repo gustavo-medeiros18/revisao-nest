@@ -14,4 +14,8 @@ export class ProductsService {
     const returnMessage = `Product with id ${id} created`;
     return returnMessage;
   }
+
+  listAllProducts(): Product[] {
+    return this.products;
+  }
 }
