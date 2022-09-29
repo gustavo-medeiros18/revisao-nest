@@ -5,14 +5,13 @@ import { Product } from './product.model';
 export class ProductsService {
   products: Product[] = [];
 
-  insertProduct(title: string, description: string, price: number) {
-    const newProduct = new Product(
-      new Date().toString(),
-      title,
-      description,
-      price,
-    );
+  insertProduct(title: string, description: string, price: number): string {
+    const id = new Date().toString();
+    const newProduct = new Product(id, title, description, price);
 
     this.products.push(newProduct);
+
+    const returnMessage = `Product with id ${id} created`;
+    return returnMessage;
   }
 }
